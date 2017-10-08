@@ -7,6 +7,9 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string :tags
 
 
+
+
+
       t.timestamps
     end
   end
