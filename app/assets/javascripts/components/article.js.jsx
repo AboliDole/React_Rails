@@ -6,6 +6,22 @@ var Article = React.createClass({
     tags: React.PropTypes.string,
     article_date: React.PropTypes.string
   },
+
+  handleDelete: function(e) {
+      e.preventDefault();
+    $.ajax({
+     method: 'DELETE',
+     url: '/api/articles/' + this.props.article.id,
+     success: function(data) {
+       this.props.handleDeleteRecord(this.props.article);
+     }.bind(this),
+     error: function(xhr, status, error) {
+       alert('Cannot delete requested record: ', error);
+     }
+});
+
+   },
+
   render: function() {
     var article = this.props.article;
     return(
@@ -15,6 +31,13 @@ var Article = React.createClass({
         <td>{article.author}</td>
         <td>{article.tags}</td>
         <td>{article.article_date}</td>
+
+        <td>
+          <a className="btn btn-danger btn-xs"
+             onClick={this.handleDelete} >
+            Delete
+          </a>
+        </td>
       </tr>
     )
   }

@@ -1,12 +1,13 @@
 module Api
   class ArticlesController < ApplicationController
-    def index
+    before_action :set_article, only: [:destroy]
 
-        render json: Article.all
+    def index
+      render json: Article.all
     end
 
     def create
-      article = Article.new(event_params)
+      article = Article.new(article_params)
       if article.save
         render json: article
       else
@@ -22,12 +23,21 @@ module Api
         render json: articles
      end
 
+     def destroy
+        @article.destroy
+        head :no_content
+     end
+
 
 
     private
 
-    def event_params
+    def article_params
       params.require(:article).permit(:title, :description, :author, :tags, :article_date)
+    end
+
+    def set_article
+      @article = Article.find(params[:id])
     end
 
   end
