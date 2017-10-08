@@ -34,6 +34,13 @@ var ArticleApplication = React.createClass({
        this.setState({ articles: articles });
    },
 
+   handleUpdateRecord: function(old_article, article) {
+      var articles = this.state.articles.slice();
+      var index = articles.indexOf(old_article);
+      articles.splice(index, 1, article);
+      this.setState({ articles: articles });
+  },
+
   render: function() {
     return(
       <div className="container">
@@ -56,7 +63,9 @@ var ArticleApplication = React.createClass({
           <div className="col-md-12">
             <ArticleTable articles={this.state.articles}
                    handleDeleteRecord=
-                   {this.handleDeleteRecord} />
+                   {this.handleDeleteRecord}
+                   handleUpdateRecord=
+                   {this.handleUpdateRecord}  />
 
           </div>
         </div>

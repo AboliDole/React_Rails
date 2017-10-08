@@ -2,13 +2,21 @@ var ArticleTable = React.createClass({
 handleDeleteRecord: function(article) {
    this.props.handleDeleteRecord(article);
  },
+
+ handleUpdateRecord: function(old_article, article) {
+    this.props.handleUpdateRecord(old_article, article);
+  },
+
   render: function() {
     var articles = [];
+
    this.props.articles.forEach(function(article) {
      articles.push(<Article article={article}
                         key={'article' + article.id}
                          handleDeleteRecord=
-                         {this.handleDeleteRecord} />);
+                         {this.handleDeleteRecord}
+                         handleUpdateRecord=
+                         {this.handleUpdateRecord} />);
    }.bind(this));
     return(
       <table className="table table-striped">
