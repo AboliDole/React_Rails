@@ -6,8 +6,7 @@ var Article = React.createClass({
     title: React.PropTypes.string,
     description: React.PropTypes.string,
     author: React.PropTypes.string,
-    tags: React.PropTypes.string,
-    article_date: React.PropTypes.string
+    tags: React.PropTypes.string
   },
 
   handleDelete: function(e) {
@@ -41,8 +40,7 @@ var Article = React.createClass({
      title: this.recordValue("title"),
      description: this.recordValue("description"),
      author: this.recordValue("author"),
-     tags: this.recordValue("tags"),
-     date: this.recordValue("article_date"),
+     tags: this.recordValue("tags")
    };
    $.ajax({
      method: 'PUT',
@@ -65,8 +63,7 @@ validRecord: function() {
   if (this.recordValue("title") &&
       this.recordValue("description") &&
       this.recordValue("author") &&
-      this.recordValue("tags") &&
-      this.recordValue("article_date"))
+      this.recordValue("tags"))
       {
     return true;
   } else {
@@ -110,14 +107,8 @@ validRecord: function() {
           />
         </td>
 
-        <td>
-          <input name="article_date"
-                 defaultValue={this.props.article.article_date}
-                 className="form-control"
-                 type="date"
-                 ref="article_date"
-          />
-        </td>
+
+
 
         <td>
           <a className="btn btn-success btn-sm"
@@ -136,18 +127,19 @@ validRecord: function() {
   renderRecord: function() {
     var article = this.props.article;
     return(
-      <tr>
+      <tr className="bg-info">
         <td>{article.title}</td>
         <td>{article.description}</td>
         <td>{article.author}</td>
         <td>{article.tags}</td>
-        <td>{article.article_date}</td>
+        <td>{article.created_at.toString().substring(0,10)}</td>
+        <td>{article.updated_at.toString().substring(0,10)}</td>
         <td>
           <a className="btn btn-danger btn-xs"
              onClick={this.handleDelete} >
             Delete
           </a>
-          <a className="btn btn-primary btn-xs"
+          <a className="btn btn-primary btn-sm"
              onClick={this.handleToggle} >
              Edit
           </a>

@@ -3,16 +3,14 @@ propTypes: {
   title: React.PropTypes.string,
   description: React.PropTypes.string,
   author: React.PropTypes.string,
-  tags: React.PropTypes.string,
-  article_date: React.PropTypes.string
+  tags: React.PropTypes.string
 },
   getInitialState: function() {
     return {
       title: '',
       description: '',
       author: '',
-      tags: '',
-      article_date: ''
+      tags: ''
     }
   },
   handleAdd: function(e) {
@@ -37,7 +35,7 @@ propTypes: {
   },
   validForm: function() {
     if (this.state.title && this.state.description &&
-        this.state.author && this.state.tags && this.state.article_date) {
+        this.state.author && this.state.tags ) {
       return true;
     } else {
       return false;
@@ -95,17 +93,7 @@ propTypes: {
                  />
         </div>
 
-        <div className="form-group">
-          <input type="date"
-                 className="form-control"
-                 name="article_date"
-                 placeholder="Article date"
-                 ref="article_date"
-                 value={this.state.article_date}
-                onChange={this.handleChange}
-                  />
-        </div>
-        <button type="submit" className="btn btn-primary">Add</button>
+        <button type="submit" className="btn btn-success">Add</button>
       </form>
     )
   }

@@ -17,6 +17,39 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
+
  .container {
    margin-top: -20px;
  }
+.jumbotron {
+  background-color:#b3d9ff;
+  text-align: center;
+}
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color:#e6ffff; // Choose your own color here
+ }
+th{
+
+  background-color:#b3d9ff;
+  text-transform: uppercase;
+
+}
+.row-head{
+  margin-bottom: 20px;
+
+}
+.form-control{
+  border: 1.5px solid #b3d9ff;
+
+}
+.btn-primary{
+  margin-left: 8px;
+  margin-top: 10px;
+  padding-top:1px;
+  padding-bottom:1px;
+}
+.btn-danger{
+  margin-left: 5px;
+}

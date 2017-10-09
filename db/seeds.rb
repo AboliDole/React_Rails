@@ -18,7 +18,9 @@ articles = Article.create([
       ""The objective of the measure is to attract new investments, generating wealth for the country and employment and income for society, always based on the precepts of sustainability,"" the ministry said in a statement.",
       author: "BBC",
       tags:"Brazil, amazon",
-      article_date: Date.today + rand(3).months
+      article_date: Date.today + rand(3).months,
+      created_at: '2016-04-16T00:00:00.000',
+      updated_at: '2017-04-12T00:00:00.000'
     },
     {
       title: "Google will ask: 'Are you depressed?'",
@@ -41,7 +43,9 @@ articles = Article.create([
       ",
       author:"Dave Lee",
       tags:"Google, depression",
-      article_date: Date.today + rand(3).months
+      article_date: Date.today + rand(3).months,
+      created_at: '2016-11-15T00:00:00.000',
+      updated_at: '2017-11-18T00:00:00.000'
 
     },
     {
@@ -53,7 +57,9 @@ articles = Article.create([
       So how will history judge Wayne Rooney's England career?",
       author:"BBC Sport",
       tags:"US Open, Tennis",
-      article_date: Date.today + rand(3).months
+      article_date: Date.today + rand(3).months,
+      created_at: '2012-04-12T00:00:00.000',
+      updated_at: '2017-06-19T00:00:00.000'
     },
     {
       title: "US Open: Milos Raonic withdraws because of wrist injury",
@@ -68,7 +74,9 @@ articles = Article.create([
 
       author:"BBB Sports",
       tags:"US Open, Tennis",
-      article_date: Date.today + rand(3).months
+      article_date: Date.today + rand(3).months,
+      created_at: '2015-03-02T00:00:00.000',
+      updated_at: '2015-03-05T00:00:00.000'
     },
     {
       title: "Billionaires and big ag are joining venture investors to fund lab-grown meat",
@@ -86,7 +94,9 @@ articles = Article.create([
 
       author:"TechCrunch",
       tags:"Billionaires, Ventures",
-      article_date: Date.today + rand(3).months
+      article_date: Date.today + rand(3).months,
+      created_at: '2012-08-07T00:00:00.000',
+      updated_at: '2013-08-07T00:00:00.000'
     },
     {
       title: "Thanks to Amazon, Seattle is now America’s biggest company town",
@@ -99,6 +109,8 @@ articles = Article.create([
       And that’s only the beginning: Amazon’s Seattle footprint of 8.1 million square feet is expected to soar to more than 12 million square feet within five years." ,
       author:"Amazon",
       tags:"Amazon, Seattle",
-      article_date: Date.today + rand(3).months
+      article_date: Date.today + rand(3).months,
+      created_at: '2011-03-06T00:00:00.000',
+      updated_at: '2016-03-09T00:00:00.000'
     }
     ])

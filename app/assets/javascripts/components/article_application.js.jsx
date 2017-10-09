@@ -49,8 +49,8 @@ var ArticleApplication = React.createClass({
           <p>by:Aboli Dole</p>
         </div>
 
-        <div className="row">
-          <div className="col-md-4">
+        <div className="row row-head">
+          <div className="col-md-4" col-color>
             <SearchForm handleSearch={this.handleSearch} />
           </div>
 

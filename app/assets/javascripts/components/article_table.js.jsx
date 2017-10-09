@@ -19,14 +19,15 @@ handleDeleteRecord: function(article) {
                          {this.handleUpdateRecord} />);
    }.bind(this));
     return(
-      <table className="table table-striped">
-        <thead>
+      <table className="table table-striped table-bordered">
+        <thead className="thead-inverse">
           <tr>
             <th className="col-md-3">Title</th>
             <th className="col-md-12">Description</th>
             <th className="col-md-1">Author</th>
             <th className="col-md-2">Tags</th>
-             <th className="col-md-2">Date</th>
+             <th className="col-md-2">CrtDt</th>
+             <th className="col-md-2">UpdDt</th>
              <th className="col-md-2">Actions</th>
 
           </tr>
